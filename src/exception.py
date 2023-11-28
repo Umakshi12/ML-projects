@@ -1,24 +1,22 @@
 import sys
+from src.logger import logging
 
-#from src.logger import logging
+# import logging 
+# import os
+# from datetime import datetime
 
+# LOG_FILE = f"{datetime.now().strftime('%m_%d_%Y_%H_%M_%S')}.log"
+# logs_path = os.path.join(os.getcwd(),"logs,LOG_FILE")
+# os.makedirs(logs_path,exist_ok = True)
 
-import logging 
-import os
-from datetime import datetime
+# LOG_FILE_PATH = os.path.join(logs_path,LOG_FILE)
 
-LOG_FILE = f"{datetime.now().strftime('%m_%d_%Y_%H_%M_%S')}.log"
-logs_path = os.path.join(os.getcwd(),"logs,LOG_FILE")
-os.makedirs(logs_path,exist_ok = True)
+# logging.basicConfig(
+#     filename = LOG_FILE_PATH,
+#     format="[%(asctime)s] %(lineno)d %(name)s - %(levelname)s - %(message)s",
+#     level = logging.INFO,
 
-LOG_FILE_PATH = os.path.join(logs_path,LOG_FILE)
-
-logging.basicConfig(
-    filename = LOG_FILE_PATH,
-    format="[%(asctime)s] %(lineno)d %(name)s - %(levelname)s - %(message)s",
-    level = logging.INFO,
-
-)
+# )
 
 def error_message_detail(error,error_detail:sys):
     _,_,exc_tb = error_detail.exc_info()
@@ -39,10 +37,10 @@ class CustomException(Exception):
         return self.error_message
 
 
-if __name__ =="__main__":
+# if __name__ =="__main__":
 
-    try:
-        a = 1/0
-    except Exception as e:
-        logging.info('Divide by Zero')
-        raise CustomException(e,sys)
+#     try:
+#         a = 1/0
+#     except Exception as e:
+#         logging.info('Divide by Zero')
+#         raise CustomException(e,sys)
